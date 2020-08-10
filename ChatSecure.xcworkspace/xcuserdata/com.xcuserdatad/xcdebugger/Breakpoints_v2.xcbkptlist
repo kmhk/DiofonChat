@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6CD47DCC-A1C6-4C1F-9D21-EDBAECE5AE4E"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71B485BD-592E-43AE-838F-B18CC65983B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSecure/Classes/Controllers/OTRSplitViewCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "conversationViewController(_:didSelectThread:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "941A7AC8-4B11-4443-ACD4-0CE06D7B6419"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSecure/Classes/Controllers/OTRSplitViewCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "enterConversationWithThread(_:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1893862-C5C4-433A-8408-87BA36E69BAD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSecure/Classes/View Controllers/OTRMessagesViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2015"
+            endingLineNumber = "2015"
+            landmarkName = "-deleteMessageAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A43DDE94-85CD-4BA3-8447-3D8C17E2CCF3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSecure/Classes/View Controllers/OTRConversationViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "462"
+            endingLineNumber = "462"
+            landmarkName = "-tableView:editActionsForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78BF1B44-E031-4D3F-B0A7-14A8D470E022"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSecure/Classes/Categories/UITableView+ChatSecure.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "+editActionsForThread:deleteActionAlsoRemovesFromRoster:connection:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "78BF1B44-E031-4D3F-B0A7-14A8D470E022 - d16e6dfa479ec4b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__93+[UITableView(ChatSecure) editActionsForThread:deleteActionAlsoRemovesFromRoster:connection:]_block_invoke.171"
+                  moduleName = "Diofon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/com/Downloads/ShareFiles-2/Diofon/ChatSecure/Classes/Categories/UITableView+ChatSecure.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "135">
+               </Location>
+               <Location
+                  uuid = "78BF1B44-E031-4D3F-B0A7-14A8D470E022 - 3cec085ddd1da7ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__93+[UITableView(ChatSecure) editActionsForThread:deleteActionAlsoRemovesFromRoster:connection:]_block_invoke_2.172"
+                  moduleName = "Diofon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/com/Downloads/ShareFiles-2/Diofon/ChatSecure/Classes/Categories/UITableView+ChatSecure.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC0FEDB1-9FC0-4825-9018-C54637ECE486"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSecure/Classes/Categories/UITableView+ChatSecure.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "+editActionsForThread:deleteActionAlsoRemovesFromRoster:connection:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1C5D6793-7304-426D-83D1-408DD089B613"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSecure/Classes/Categories/UITableView+ChatSecure.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "+editActionsForThread:deleteActionAlsoRemovesFromRoster:connection:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "561460C0-909B-40D9-A3B2-37246FEF86B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSecure/Classes/Categories/UITableView+ChatSecure.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "+editActionsForThread:deleteActionAlsoRemovesFromRoster:connection:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FBD476B4-3CA3-4277-A1AB-033C687AAFAA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSecure/Classes/Categories/UITableView+ChatSecure.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "+editActionsForThread:deleteActionAlsoRemovesFromRoster:connection:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FBD476B4-3CA3-4277-A1AB-033C687AAFAA - d16e6dfa479ec4b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__93+[UITableView(ChatSecure) editActionsForThread:deleteActionAlsoRemovesFromRoster:connection:]_block_invoke.171"
+                  moduleName = "Diofon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/com/Downloads/ShareFiles-2/Diofon/ChatSecure/Classes/Categories/UITableView+ChatSecure.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1077">
+               </Location>
+               <Location
+                  uuid = "FBD476B4-3CA3-4277-A1AB-033C687AAFAA - d16e6dfa479ec4b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__93+[UITableView(ChatSecure) editActionsForThread:deleteActionAlsoRemovesFromRoster:connection:]_block_invoke.171"
+                  moduleName = "Diofon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/com/Downloads/ShareFiles-2/Diofon/ChatSecure/Classes/Categories/UITableView+ChatSecure.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1610">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A879212-AD65-48F6-AD10-9BDADB2E4DDE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSecure/Classes/View Controllers/OTRMessagesViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1830"
+            endingLineNumber = "1830"
+            landmarkName = "-collectionView:attributedTextForMessageBubbleTopLabelAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
