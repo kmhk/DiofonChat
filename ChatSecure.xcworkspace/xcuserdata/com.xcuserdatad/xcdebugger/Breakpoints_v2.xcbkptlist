@@ -46,8 +46,8 @@
             filePath = "ChatSecure/Classes/View Controllers/OTRMessagesViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2048"
-            endingLineNumber = "2048"
+            startingLineNumber = "2051"
+            endingLineNumber = "2051"
             landmarkName = "-collectionView:didTapAvatarImageView:atIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,8 +254,8 @@
             filePath = "ChatSecure/Classes/View Controllers/OTRMessagesViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1547"
-            endingLineNumber = "1547"
+            startingLineNumber = "1549"
+            endingLineNumber = "1549"
             landmarkName = "-collectionView:layout:sizeForItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>

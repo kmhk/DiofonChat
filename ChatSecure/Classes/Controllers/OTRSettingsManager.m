@@ -34,6 +34,8 @@
 #import "OTRLanguageSetting.h"
 #import "OTRDonateSetting.h"
 #import "OTRIntSetting.h"
+#import "OTRListSetting.h"
+#import "OTRListSettingValue.h"
 #import "OTRCertificateSetting.h"
 #import "OTRUtilities.h"
 #import "ChatSecureCoreCompat-Swift.h"
@@ -91,12 +93,13 @@
                                                                                  description:DELETE_CONVERSATIONS_ON_DISCONNECT_DESCRIPTION_STRING()
                                                                                  settingsKey:kOTRSettingKeyDeleteOnDisconnect];
     
-    OTRIntSetting *fireMsgTime = [[OTRIntSetting alloc] initWithTitle:@"Fire Message Time (seconds)"
-                                                          description:@"Delete message automatically"
+    OTRListSetting *fireMsgTime = [[OTRListSetting alloc] initWithTitle:@"Fire Message Time"
+                                                          description:NULL
                                                           settingsKey:kOTRSettingKeyFireMsgTimer];
-    fireMsgTime.maxValue = 60;
-    fireMsgTime.minValue = 10;
-    fireMsgTime.numValues = 50;
+    fireMsgTime.possibleValues = @[[[OTRListSettingValue alloc] initWithTitle:@"10 s" detail:NULL value:[NSNumber numberWithInt:10]],
+                                   [[OTRListSettingValue alloc] initWithTitle:@"1 min" detail:NULL value:[NSNumber numberWithInt:60]],
+                                   [[OTRListSettingValue alloc] initWithTitle:@"1 hour" detail:NULL value:[NSNumber numberWithInt:60 * 60]],
+                                   [[OTRListSettingValue alloc] initWithTitle:@"1 day" detail:NULL value:[NSNumber numberWithInt:60 * 60 * 24]]];
     
     [newSettingsDictionary setObject:deletedDisconnectedConversations forKey:kOTRSettingKeyDeleteOnDisconnect];
     [newSettingsDictionary setObject:fireMsgTime forKey:kOTRSettingKeyFireMsgTimer];

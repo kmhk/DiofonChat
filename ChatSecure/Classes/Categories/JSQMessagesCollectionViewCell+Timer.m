@@ -57,7 +57,7 @@
         return;
     }
     
-    NSString *str = [NSString stringWithFormat:@"%.2ld:%.2ld", (NSInteger)t / 60, (NSInteger)t % 60];
+    NSString *str = [NSString stringWithFormat:@"%.2ld:%.2ld:%.2ld",(NSInteger)t / 60 / 60, ((NSInteger)t / 60) % 60, (NSInteger)t % 60];
     self.messageBubbleTopLabel.attributedText = [[NSAttributedString alloc] initWithString:str];
     self.timeCount = [NSNumber numberWithDouble:(t - 1)];
 }

@@ -1477,7 +1477,9 @@ typedef NS_ENUM(int, OTRDropDownType) {
     
     NSDate* now = [NSDate date];
     double interval = [now timeIntervalSinceDate:message.messageDate];
-    NSInteger max = [OTRSettingsManager intForOTRSettingKey:kOTRSettingKeyFireMsgTimer];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
+    NSInteger max = (NSInteger)timeSetting.intValue;
     [cell startTimer:((NSTimeInterval)max - interval)];
     
     return cell;
@@ -1872,9 +1874,10 @@ typedef NS_ENUM(int, OTRDropDownType) {
     // for timer
     NSDate* now = [NSDate date];
     double interval = [now timeIntervalSinceDate:message.messageDate];
-    NSInteger max = [OTRSettingsManager intForOTRSettingKey:kOTRSettingKeyFireMsgTimer];
-    double t = (double)max - interval;
-    NSString *str = [NSString stringWithFormat:@"%.2ld:%.2ld", (NSInteger)t / 60, (NSInteger)t % 60];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
+    double t = (double)timeSetting.intValue - interval;
+    NSString *str = [NSString stringWithFormat:@"%.2ld:%.2ld:%.2ld",(NSInteger)t / 60 / 60, ((NSInteger)t / 60) % 60, (NSInteger)t % 60];
     return [[NSAttributedString alloc] initWithString:str];
 }
 
