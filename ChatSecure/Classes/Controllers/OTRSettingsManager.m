@@ -91,7 +91,15 @@
                                                                                  description:DELETE_CONVERSATIONS_ON_DISCONNECT_DESCRIPTION_STRING()
                                                                                  settingsKey:kOTRSettingKeyDeleteOnDisconnect];
     
+    OTRIntSetting *fireMsgTime = [[OTRIntSetting alloc] initWithTitle:@"Fire Message Time (seconds)"
+                                                          description:@"Delete message automatically"
+                                                          settingsKey:kOTRSettingKeyFireMsgTimer];
+    fireMsgTime.maxValue = 60;
+    fireMsgTime.minValue = 10;
+    fireMsgTime.numValues = 50;
+    
     [newSettingsDictionary setObject:deletedDisconnectedConversations forKey:kOTRSettingKeyDeleteOnDisconnect];
+    [newSettingsDictionary setObject:fireMsgTime forKey:kOTRSettingKeyFireMsgTimer];
     
     OTRCertificateSetting * certSetting = [[OTRCertificateSetting alloc] initWithTitle:PINNED_CERTIFICATES_STRING()
                                                                            description:PINNED_CERTIFICATES_DESCRIPTION_STRING()];
@@ -139,7 +147,7 @@
 //    }
 
     
-    NSArray *chatSettings = @[deletedDisconnectedConversations];
+    NSArray *chatSettings = @[deletedDisconnectedConversations, fireMsgTime];
     OTRSettingsGroup *chatSettingsGroup = [[OTRSettingsGroup alloc] initWithTitle:CHAT_STRING() settings:chatSettings];
     [settingsGroups addObject:chatSettingsGroup];
     
