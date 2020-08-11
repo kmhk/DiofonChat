@@ -50,7 +50,7 @@
 - (void)onFire
 {
     double t = self.timeCount.doubleValue;
-    if (t < 0) {
+    if (t <= 0) {
         [self.timer invalidate];
         self.timer = NULL;
         [self deleteMsg];
