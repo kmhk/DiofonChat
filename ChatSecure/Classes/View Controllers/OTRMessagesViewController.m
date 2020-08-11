@@ -32,6 +32,7 @@
 #import "OTRProtocolManager.h"
 #import "OTRColors.h"
 #import "JSQMessagesCollectionViewCell+ChatSecure.h"
+#import "./../Categories/JSQMessagesCollectioNViewCell+Timer.h"
 @import BButton;
 #import "OTRAttachmentPicker.h"
 #import "OTRImageItem.h"
@@ -1470,6 +1471,10 @@ typedef NS_ENUM(int, OTRDropDownType) {
     
     // Needed for link interaction
     cell.textView.delegate = self;
+    
+    // for Timer for 60 sec
+    [cell startTimer:60];
+    
     return cell;
 }
 
@@ -1996,7 +2001,9 @@ heightForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath
     if ([self showSenderDisplayNameAtIndexPath:indexPath]) {
         return kJSQMessagesCollectionViewCellLabelHeightDefault;
     }
-    return 0.0f;
+    
+    // for Timer
+    return 21.0f;//0.0f;
 }
 
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView
