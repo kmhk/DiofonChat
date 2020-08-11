@@ -71,7 +71,7 @@ typedef NS_ENUM(int, OTRDropDownType) {
     OTRDropDownTypePush          = 2
 };
 
-@interface OTRMessagesViewController () <UITextViewDelegate, OTRAttachmentPickerDelegate, OTRYapViewHandlerDelegateProtocol, OTRMessagesCollectionViewFlowLayoutSizeProtocol, OTRRoomOccupantsViewControllerDelegate> {
+@interface OTRMessagesViewController () <UITextViewDelegate, OTRAttachmentPickerDelegate, OTRYapViewHandlerDelegateProtocol, OTRMessagesCollectionViewFlowLayoutSizeProtocol, OTRRoomOccupantsViewControllerDelegate, JSQMessagesCollectionViewCellTimerDelegate> {
     JSQMessagesAvatarImage *_warningAvatarImage;
     JSQMessagesAvatarImage *_accountAvatarImage;
     JSQMessagesAvatarImage *_buddyAvatarImage;
@@ -1473,7 +1473,11 @@ typedef NS_ENUM(int, OTRDropDownType) {
     cell.textView.delegate = self;
     
     // for Timer for 60 sec
-    [cell startTimer:60];
+    cell.timerDelegate = self;
+    
+    NSDate* now = [NSDate date];
+    double interval = [now timeIntervalSinceDate:message.messageDate];
+    [cell startTimer:(10.0f - interval)];
     
     return cell;
 }
@@ -1832,8 +1836,10 @@ typedef NS_ENUM(int, OTRDropDownType) {
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath
 {
+    id<OTRMessageProtocol,JSQMessageData> message = [self messageAtIndexPath:indexPath];
+    
     if ([self showSenderDisplayNameAtIndexPath:indexPath]) {
-        id<OTRMessageProtocol,JSQMessageData> message = [self messageAtIndexPath:indexPath];
+        //id<OTRMessageProtocol,JSQMessageData> message = [self messageAtIndexPath:indexPath];
         
         __block NSString *displayName = nil;
         if ([message isKindOfClass:[OTRXMPPRoomMessage class]]) {
@@ -1862,7 +1868,12 @@ typedef NS_ENUM(int, OTRDropDownType) {
         return [[NSAttributedString alloc] initWithString:displayName];
     }
     
-    return  nil;
+    // for timer
+    NSDate* now = [NSDate date];
+    double interval = [now timeIntervalSinceDate:message.messageDate];
+    double t = 10.0f - interval;
+    NSString *str = [NSString stringWithFormat:@"%.2ld:%.2ld", (NSInteger)t / 60, (NSInteger)t % 60];
+    return [[NSAttributedString alloc] initWithString:str];
 }
 
 /** Currently uses clock for queued, and checkmark for delivered. */
@@ -2168,6 +2179,7 @@ heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
                 // We can't use finishSendingMessage here because it might
                 // accidentally clear out unsent message text
                 [self scrollToBottomAnimated:YES];
+                [self.collectionView reloadData];
             }
         }
     }];
@@ -2392,6 +2404,15 @@ heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
         UINavigationController *keyNav = [[UINavigationController alloc] initWithRootViewController:vc];
         [self presentViewController:keyNav animated:YES completion:nil];
     }
+}
+
+
+// MARK: - JSQCollectionViewCell Timer Delegate
+
+- (void)deleteMessageAt:(NSIndexPath *)indexPath
+{
+    [self deleteMessageAtIndexPath:indexPath];
+    //[self.collectionView reloadData];
 }
 
 @end

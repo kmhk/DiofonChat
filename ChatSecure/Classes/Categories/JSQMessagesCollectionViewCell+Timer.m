@@ -30,25 +30,50 @@
     objc_setAssociatedObject(self, @selector(timeCount), timeCount, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+- (id<JSQMessagesCollectionViewCellTimerDelegate>)timerDelegate
+{
+    return objc_getAssociatedObject(self, @selector(timerDelegate));
+}
 
-- (void)startTimer:(NSInteger)expiryTime
+- (void)setTimerDelegate:(id<JSQMessagesCollectionViewCellTimerDelegate>)timerDelegate {
+    objc_setAssociatedObject(self, @selector(timerDelegate), timerDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)startTimer:(NSTimeInterval)expiryTime
 {
     if (self.timer != NULL) return;
     
-    self.timeCount = [NSNumber numberWithInteger:expiryTime];
+    self.timeCount = [NSNumber numberWithDouble:expiryTime];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onFire) userInfo:nil repeats:YES];
 }
 
-- (void)onFire{
-    NSInteger t = self.timeCount.integerValue;
+- (void)onFire
+{
+    double t = self.timeCount.doubleValue;
     if (t < 0) {
         [self.timer invalidate];
+        self.timer = NULL;
+        [self deleteMsg];
         return;
     }
     
-    NSString *str = [NSString stringWithFormat:@"%.2ld:%.2ld", t / 60, t % 60];
+    NSString *str = [NSString stringWithFormat:@"%.2ld:%.2ld", (NSInteger)t / 60, (NSInteger)t % 60];
     self.messageBubbleTopLabel.attributedText = [[NSAttributedString alloc] initWithString:str];
-    self.timeCount = [NSNumber numberWithInteger:(t - 1)];
+    self.timeCount = [NSNumber numberWithDouble:(t - 1)];
+}
+
+- (void)deleteMsg
+{
+    UIView *view = self;
+    do {
+        view = view.superview;
+    } while (![view isKindOfClass:[UICollectionView class]]);
+    UICollectionView *collectionView = (UICollectionView *)view;
+    NSIndexPath *indexPath = [collectionView indexPathForCell:self];
+    
+    if (indexPath != NULL && [self.timerDelegate respondsToSelector:@selector(deleteMessageAt:)]) {
+        [self.timerDelegate deleteMessageAt:indexPath];
+    }
 }
 
 @end
