@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)deleteMessageAt:(NSIndexPath *)indexPath;
 - (NSTimeInterval)timerIntervalAt:(NSIndexPath *)indexPath;
+- (NSTimeInterval)setUnlockedAt:(NSIndexPath *)indexPath;
 
 @end
 
@@ -29,7 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 // for timer
 @property (strong, nullable) NSTimer *timer;
-@property (strong, nonatomic) NSNumber *timeCount;
 @property (strong, nonatomic) id<JSQMessagesCollectionViewCellTimerDelegate> timerDelegate;
 
 @end

@@ -96,10 +96,13 @@
     OTRListSetting *fireMsgTime = [[OTRListSetting alloc] initWithTitle:@"Fire Message Time"
                                                           description:NULL
                                                           settingsKey:kOTRSettingKeyFireMsgTimer];
-    fireMsgTime.possibleValues = @[[[OTRListSettingValue alloc] initWithTitle:@"10 s" detail:NULL value:[NSNumber numberWithInt:10]],
-                                   [[OTRListSettingValue alloc] initWithTitle:@"1 min" detail:NULL value:[NSNumber numberWithInt:60]],
-                                   [[OTRListSettingValue alloc] initWithTitle:@"1 hour" detail:NULL value:[NSNumber numberWithInt:60 * 60]],
-                                   [[OTRListSettingValue alloc] initWithTitle:@"1 day" detail:NULL value:[NSNumber numberWithInt:60 * 60 * 24]]];
+    fireMsgTime.possibleValues = @[[[OTRListSettingValue alloc] initWithTitle:@"30 seconds" detail:NULL value:[NSNumber numberWithInt:30+1]],
+                                   [[OTRListSettingValue alloc] initWithTitle:@"1 min" detail:NULL value:[NSNumber numberWithInt:60+1]],
+                                   [[OTRListSettingValue alloc] initWithTitle:@"1 hour" detail:NULL value:[NSNumber numberWithInt:60*60+1]],
+                                   [[OTRListSettingValue alloc] initWithTitle:@"24 hours" detail:NULL value:[NSNumber numberWithInt:60*60*24+1]],
+                                   [[OTRListSettingValue alloc] initWithTitle:@"48 hours" detail:NULL value:[NSNumber numberWithInt:120*60*24+1]]];
+    
+    fireMsgTime.defaultValue = @"48 hours";
     
     [newSettingsDictionary setObject:deletedDisconnectedConversations forKey:kOTRSettingKeyDeleteOnDisconnect];
     [newSettingsDictionary setObject:fireMsgTime forKey:kOTRSettingKeyFireMsgTimer];

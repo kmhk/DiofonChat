@@ -33,6 +33,7 @@
 #import "OTRColors.h"
 #import "JSQMessagesCollectionViewCell+ChatSecure.h"
 #import "./../Categories/JSQMessagesCollectioNViewCell+Timer.h"
+#import "./../Controllers/OTRMessageTimerManager.h"
 @import BButton;
 #import "OTRAttachmentPicker.h"
 #import "OTRImageItem.h"
@@ -1472,15 +1473,27 @@ typedef NS_ENUM(int, OTRDropDownType) {
     // Needed for link interaction
     cell.textView.delegate = self;
     
-    // for Timer for 60 sec
+    // for Timer and for lock
     cell.timerDelegate = self;
     
-    NSDate* now = [NSDate date];
-    double interval = [now timeIntervalSinceDate:message.messageDate];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
-    NSInteger max = (NSInteger)timeSetting.intValue;
-    [cell startTimer:((NSTimeInterval)max - interval)];
+    NSDate *unlockedDate;
+    if ([message isMessageIncoming]) {
+        unlockedDate = [OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId];
+    } else {
+        unlockedDate = message.messageDate;
+    }
+    
+    if (unlockedDate == NULL) {
+        [cell showLock:YES];
+        
+    } else {
+        NSDate* now = [NSDate date];
+        double interval = [now timeIntervalSinceDate:unlockedDate];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
+        NSInteger max = (NSInteger)timeSetting.intValue;
+        [cell startTimer:((NSTimeInterval)max - interval)];
+    }
     
     return cell;
 }
@@ -1872,11 +1885,22 @@ typedef NS_ENUM(int, OTRDropDownType) {
     }
     
     // for timer
+    NSDate *unlockedDate;
+    if ([message isMessageIncoming]) {
+        unlockedDate = [OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId];
+    } else {
+        unlockedDate = message.messageDate;
+    }
+    
+    if (unlockedDate == NULL) {
+        return nil;
+    }
+    
     NSDate* now = [NSDate date];
-    double interval = [now timeIntervalSinceDate:message.messageDate];
+    double interval = [now timeIntervalSinceDate:unlockedDate];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
-    double t = (double)timeSetting.intValue - interval;
+    double t = ((double)timeSetting.intValue > interval) ? ((double)timeSetting.intValue - interval) : 0;
     NSString *str = [NSString stringWithFormat:@"%.2ld:%.2ld:%.2ld",(NSInteger)t / 60 / 60, ((NSInteger)t / 60) % 60, (NSInteger)t % 60];
     return [[NSAttributedString alloc] initWithString:str];
 }
@@ -2045,6 +2069,9 @@ heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
         buddy.lastMessageId = nil;
         [buddy saveWithTransaction:transaction];
     }];
+    
+    // for lock / unlock msg
+    [OTRMessageTimerManager removeUnlockTimerOfMessage:message.uniqueId];
 }
 
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapAvatarImageView:(UIImageView *)avatarImageView atIndexPath:(NSIndexPath *)indexPath
@@ -2423,8 +2450,14 @@ heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
 - (NSTimeInterval)timerIntervalAt:(NSIndexPath *)indexPath
 {
     id <OTRMessageProtocol>message = [self messageAtIndexPath:indexPath];
-    NSDate* now = [NSDate date];
-    double interval = [now timeIntervalSinceDate:message.messageDate];
+    
+    NSDate *now = [NSDate date];
+    NSDate *unlockedDate = [OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId];
+    if (unlockedDate == NULL) {
+        unlockedDate = message.messageDate;
+    }
+    
+    double interval = [now timeIntervalSinceDate:unlockedDate];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
@@ -2432,16 +2465,17 @@ heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
     return (double)timeSetting.intValue - interval;
 }
 
-- (NSAttributedString *)timerStringAt:(NSIndexPath *)indexPath
+- (NSTimeInterval)setUnlockedAt:(NSIndexPath *)indexPath
 {
     id <OTRMessageProtocol>message = [self messageAtIndexPath:indexPath];
-    NSDate* now = [NSDate date];
-    double interval = [now timeIntervalSinceDate:message.messageDate];
+    NSDate *now = [NSDate date];
+    NSDate *unlockedDate = now;
+    [OTRMessageTimerManager setUnlockTimerOfMessage:message.uniqueId date:unlockedDate];
+    double interval = [now timeIntervalSinceDate:unlockedDate];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
-    double t = (double)timeSetting.intValue - interval;
-    NSString *str = [NSString stringWithFormat:@"%.2ld:%.2ld:%.2ld",(NSInteger)t / 60 / 60, ((NSInteger)t / 60) % 60, (NSInteger)t % 60];
-    return [[NSAttributedString alloc] initWithString:str];    
+    NSInteger max = (NSInteger)timeSetting.intValue;
+    return ((NSTimeInterval)max - interval);
 }
 
 @end
