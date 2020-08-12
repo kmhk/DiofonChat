@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol JSQMessagesCollectionViewCellTimerDelegate <NSObject>
 
 - (void)deleteMessageAt:(NSIndexPath *)indexPath;
+- (NSTimeInterval)timerIntervalAt:(NSIndexPath *)indexPath;
 
 @end
 
@@ -20,8 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 // MARK: -
 @interface JSQMessagesCollectionViewCell (Timer)
 
+// for timer
 - (void)startTimer:(NSTimeInterval)expiryTime;
 
+// for lock
+- (void)showLock:(BOOL)isShown;
+
+// for timer
 @property (strong, nullable) NSTimer *timer;
 @property (strong, nonatomic) NSNumber *timeCount;
 @property (strong, nonatomic) id<JSQMessagesCollectionViewCellTimerDelegate> timerDelegate;

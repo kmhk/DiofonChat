@@ -2420,4 +2420,28 @@ heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
     //[self.collectionView reloadData];
 }
 
+- (NSTimeInterval)timerIntervalAt:(NSIndexPath *)indexPath
+{
+    id <OTRMessageProtocol>message = [self messageAtIndexPath:indexPath];
+    NSDate* now = [NSDate date];
+    double interval = [now timeIntervalSinceDate:message.messageDate];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
+    
+    return (double)timeSetting.intValue - interval;
+}
+
+- (NSAttributedString *)timerStringAt:(NSIndexPath *)indexPath
+{
+    id <OTRMessageProtocol>message = [self messageAtIndexPath:indexPath];
+    NSDate* now = [NSDate date];
+    double interval = [now timeIntervalSinceDate:message.messageDate];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
+    double t = (double)timeSetting.intValue - interval;
+    NSString *str = [NSString stringWithFormat:@"%.2ld:%.2ld:%.2ld",(NSInteger)t / 60 / 60, ((NSInteger)t / 60) % 60, (NSInteger)t % 60];
+    return [[NSAttributedString alloc] initWithString:str];    
+}
+
 @end
