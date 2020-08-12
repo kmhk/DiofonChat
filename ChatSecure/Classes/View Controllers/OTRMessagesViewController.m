@@ -1485,8 +1485,21 @@ typedef NS_ENUM(int, OTRDropDownType) {
             unlockedDate = dict[@"date"];
             timeSetting = dict[@"expire"];
         }
+        
     } else {
-        unlockedDate = message.messageDate;
+        NSDictionary* dict = [OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId];
+        if (dict) {
+            unlockedDate = dict[@"date"];
+            timeSetting = dict[@"expire"];
+        } else {
+            unlockedDate = message.messageDate;
+            timeSetting = [[NSUserDefaults standardUserDefaults] objectForKey:@"messageFireTimer"];
+            if (timeSetting == NULL) {
+                timeSetting = [NSNumber numberWithInt:48*60*60];
+            }
+            
+            [OTRMessageTimerManager setUnlockTimerOfMessage:message.uniqueId date:unlockedDate expire:timeSetting];
+        }
     }
     
     if (unlockedDate == NULL) {
@@ -1899,7 +1912,17 @@ typedef NS_ENUM(int, OTRDropDownType) {
             timeSetting = dict[@"expire"];
         }
     } else {
-        unlockedDate = message.messageDate;
+        NSDictionary* dict = [OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId];
+        if (dict) {
+            unlockedDate = dict[@"date"];
+            timeSetting = dict[@"expire"];
+        } else {
+            unlockedDate = message.messageDate;
+            timeSetting = [[NSUserDefaults standardUserDefaults] objectForKey:@"messageFireTimer"];
+            if (timeSetting == NULL) {
+                timeSetting = [NSNumber numberWithInt:48*60*60];
+            }
+        }
     }
     
     if (unlockedDate == NULL) {

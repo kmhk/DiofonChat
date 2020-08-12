@@ -30,8 +30,8 @@
             filePath = "ChatSecure/Classes/View Controllers/OTRMessagesViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1895"
-            endingLineNumber = "1895"
+            startingLineNumber = "1908"
+            endingLineNumber = "1908"
             landmarkName = "-collectionView:attributedTextForMessageBubbleTopLabelAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "ChatSecure/Classes/View Controllers/OTRMessagesViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2483"
-            endingLineNumber = "2483"
+            startingLineNumber = "2506"
+            endingLineNumber = "2506"
             landmarkName = "-setUnlockedAt:"
             landmarkType = "7">
          </BreakpointContent>
@@ -65,6 +65,22 @@
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "+setUnlockTimerOfMessage:date:expire:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD37000C-912A-45D0-8288-8717EB2B5232"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSecure/Classes/View Controllers/OTRMessagesHoldTalkViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "396"
+            endingLineNumber = "396"
+            landmarkName = "-didPressAccessoryButton:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
