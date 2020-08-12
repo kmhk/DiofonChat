@@ -1476,9 +1476,15 @@ typedef NS_ENUM(int, OTRDropDownType) {
     // for Timer and for lock
     cell.timerDelegate = self;
     
-    NSDate *unlockedDate;
+    NSDate *unlockedDate = NULL;
+    NSNumber *timeSetting = [[NSUserDefaults standardUserDefaults] objectForKey:kOTRSettingKeyFireMsgTimer];
+    
     if ([message isMessageIncoming]) {
-        unlockedDate = [OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId];
+        NSDictionary* dict = [OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId];
+        if (dict) {
+            unlockedDate = dict[@"date"];
+            timeSetting = dict[@"expire"];
+        }
     } else {
         unlockedDate = message.messageDate;
     }
@@ -1489,8 +1495,6 @@ typedef NS_ENUM(int, OTRDropDownType) {
     } else {
         NSDate* now = [NSDate date];
         double interval = [now timeIntervalSinceDate:unlockedDate];
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
         NSInteger max = (NSInteger)timeSetting.intValue;
         [cell startTimer:((NSTimeInterval)max - interval)];
     }
@@ -1886,8 +1890,14 @@ typedef NS_ENUM(int, OTRDropDownType) {
     
     // for timer
     NSDate *unlockedDate;
+    NSNumber *timeSetting = [[NSUserDefaults standardUserDefaults] objectForKey:kOTRSettingKeyFireMsgTimer];
+    
     if ([message isMessageIncoming]) {
-        unlockedDate = [OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId];
+        NSDictionary* dict = [OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId];
+        if (dict) {
+            unlockedDate = dict[@"date"];
+            timeSetting = dict[@"expire"];
+        }
     } else {
         unlockedDate = message.messageDate;
     }
@@ -1898,8 +1908,6 @@ typedef NS_ENUM(int, OTRDropDownType) {
     
     NSDate* now = [NSDate date];
     double interval = [now timeIntervalSinceDate:unlockedDate];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
     double t = ((double)timeSetting.intValue > interval) ? ((double)timeSetting.intValue - interval) : 0;
     NSString *str = [NSString stringWithFormat:@"%.2ld:%.2ld:%.2ld",(NSInteger)t / 60 / 60, ((NSInteger)t / 60) % 60, (NSInteger)t % 60];
     return [[NSAttributedString alloc] initWithString:str];
@@ -2452,15 +2460,20 @@ heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
     id <OTRMessageProtocol>message = [self messageAtIndexPath:indexPath];
     
     NSDate *now = [NSDate date];
-    NSDate *unlockedDate = [OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId];
-    if (unlockedDate == NULL) {
+    
+    NSDictionary *dict = [OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId];
+    NSDate *unlockedDate;
+    NSNumber *timeSetting;
+    
+    if (dict == NULL) {
         unlockedDate = message.messageDate;
+        timeSetting = [[NSUserDefaults standardUserDefaults] objectForKey:kOTRSettingKeyFireMsgTimer];
+    } else {
+        unlockedDate = dict[@"date"];
+        timeSetting = dict[@"expire"];
     }
     
     double interval = [now timeIntervalSinceDate:unlockedDate];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
     
     return (double)timeSetting.intValue - interval;
 }
@@ -2470,10 +2483,10 @@ heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
     id <OTRMessageProtocol>message = [self messageAtIndexPath:indexPath];
     NSDate *now = [NSDate date];
     NSDate *unlockedDate = now;
-    [OTRMessageTimerManager setUnlockTimerOfMessage:message.uniqueId date:unlockedDate];
+    NSNumber *timeSetting = [[NSUserDefaults standardUserDefaults] objectForKey:kOTRSettingKeyFireMsgTimer];
+    
+    [OTRMessageTimerManager setUnlockTimerOfMessage:message.uniqueId date:unlockedDate expire:timeSetting];
     double interval = [now timeIntervalSinceDate:unlockedDate];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber* timeSetting = [defaults objectForKey:kOTRSettingKeyFireMsgTimer];
     NSInteger max = (NSInteger)timeSetting.intValue;
     return ((NSTimeInterval)max - interval);
 }

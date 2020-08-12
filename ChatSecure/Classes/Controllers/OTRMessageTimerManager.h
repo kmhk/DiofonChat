@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OTRMessageTimerManager : NSObject
 
-+ (NSDate *)getUnlockTimerOfMessage:(NSString *)messageID;
++ (NSDictionary *)getUnlockTimerOfMessage:(NSString *)messageID;
 + (void)removeUnlockTimerOfMessage:(NSString *)messageID;
-+ (void)setUnlockTimerOfMessage:(NSString *)messageID date:(NSDate *)date;
++ (void)setUnlockTimerOfMessage:(NSString *)messageID date:(NSDate *)date expire:(NSNumber *)expire;
 
 @end
 

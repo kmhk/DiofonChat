@@ -10,7 +10,7 @@
 
 @implementation OTRMessageTimerManager
 
-+ (NSDate *)getUnlockTimerOfMessage:(NSString *)messageID
++ (NSDictionary *)getUnlockTimerOfMessage:(NSString *)messageID
 {
     NSDictionary *dict = (NSDictionary *)[[NSUserDefaults standardUserDefaults] objectForKey:@"messageUnlockTimer"];
     if (dict) {
@@ -39,7 +39,7 @@
 }
 
 
-+ (void)setUnlockTimerOfMessage:(NSString *)messageID date:(NSDate *)date
++ (void)setUnlockTimerOfMessage:(NSString *)messageID date:(NSDate *)date expire:(NSNumber *)expire
 {
     NSDictionary *dict = (NSDictionary *)[[NSUserDefaults standardUserDefaults] objectForKey:@"messageUnlockTimer"];
     NSMutableDictionary *mutableDict;
@@ -50,7 +50,7 @@
         mutableDict = [[NSMutableDictionary alloc] init];
     }
     
-    [mutableDict setObject:date forKey:messageID];
+    [mutableDict setObject:@{@"date": date, @"expire": expire} forKey:messageID];
     
     [[NSUserDefaults standardUserDefaults] setObject:mutableDict forKey:@"messageUnlockTimer"];
     [[NSUserDefaults standardUserDefaults] synchronize];
