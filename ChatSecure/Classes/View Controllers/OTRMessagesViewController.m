@@ -76,6 +76,8 @@ typedef NS_ENUM(int, OTRDropDownType) {
     JSQMessagesAvatarImage *_warningAvatarImage;
     JSQMessagesAvatarImage *_accountAvatarImage;
     JSQMessagesAvatarImage *_buddyAvatarImage;
+    
+    NSTimer *fireTimer;
 }
 
 @property (nonatomic, strong) OTRYapViewHandler *viewHandler;
@@ -144,6 +146,9 @@ typedef NS_ENUM(int, OTRDropDownType) {
 - (void) dealloc {
     [self.lastSeenRefreshTimer invalidate];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    if (fireTimer) {
+        [fireTimer invalidate];
+    }
 }
 
 - (void)viewDidLoad
@@ -240,6 +245,13 @@ typedef NS_ENUM(int, OTRDropDownType) {
         }
     }];
     
+    
+    // for fire timer
+    [NSOperationQueue.mainQueue addOperationWithBlock:^{
+        fireTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            if (self.collectionView) [self.collectionView reloadData];
+        }];
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -1476,6 +1488,8 @@ typedef NS_ENUM(int, OTRDropDownType) {
     // for Timer and for lock
     cell.timerDelegate = self;
     
+    cell.messageBubbleTopLabel.attributedText = [self collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];
+    
     NSDate *unlockedDate = NULL;
     NSNumber *timeSetting = [self numberForOTRSettingKey:kOTRSettingKeyFireMsgTimer];
     
@@ -1505,19 +1519,13 @@ typedef NS_ENUM(int, OTRDropDownType) {
     if (unlockedDate == NULL) {
         [cell showLock:YES];
         
-//        NSString *log = [NSString stringWithFormat:@"LOCKED: %@-%@\n", message.uniqueId, message.messageText];
-//        printf(log.UTF8String);
-        
     } else {
         [cell showLock:NO];
         
-//        NSString *log = [NSString stringWithFormat:@"UNLOCKED: %@-%@\n", message.uniqueId, message.messageText];
-//        printf(log.UTF8String);
-        
-        NSDate* now = [NSDate date];
-        double interval = [now timeIntervalSinceDate:unlockedDate];
-        NSInteger max = (NSInteger)timeSetting.intValue;
-        [cell startTimer:((NSTimeInterval)max - interval)];
+        NSTimeInterval t = [self timerIntervalAt:indexPath];
+        if (t < 0) {
+            [self deleteMessageAtIndexPath:indexPath];
+        }
     }
     
     return cell;
@@ -2123,8 +2131,13 @@ heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
 {
     id <OTRMessageProtocol,JSQMessageData> message = [self messageAtIndexPath:indexPath];
     if (!message.isMediaMessage) {
+        if ([OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId] == nil) {
+            [self setUnlockedAt:indexPath];
+        }
+        
         return;
     }
+    
     __block OTRMediaItem *item = nil;
     [self.connections.ui readWithBlock:^(YapDatabaseReadTransaction *transaction) {
          item = [OTRMediaItem mediaItemForMessage:message transaction:transaction];
@@ -2135,7 +2148,11 @@ heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
     }
     
     if ([item isKindOfClass:[OTRImageItem class]]) {
-        [self showImage:(OTRImageItem *)item fromCollectionView:collectionView atIndexPath:indexPath];
+        if ([OTRMessageTimerManager getUnlockTimerOfMessage:message.uniqueId] == nil) {
+            [self setUnlockedAt:indexPath];
+        } else {
+            [self showImage:(OTRImageItem *)item fromCollectionView:collectionView atIndexPath:indexPath];
+        }
     }
     else if ([item isKindOfClass:[OTRVideoItem class]]) {
         [self showVideo:(OTRVideoItem *)item fromCollectionView:collectionView atIndexPath:indexPath];

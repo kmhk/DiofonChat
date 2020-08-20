@@ -22,14 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 // MARK: -
 @interface JSQMessagesCollectionViewCell (Timer)
 
-// for timer
-- (void)startTimer:(NSTimeInterval)expiryTime;
-
 // for lock
 - (void)showLock:(BOOL)isShown;
 
 // for timer
-@property (strong, nullable) NSTimer *timer;
 @property (strong, nonatomic) id<JSQMessagesCollectionViewCellTimerDelegate> timerDelegate;
 
 @end
