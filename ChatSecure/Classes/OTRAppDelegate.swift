@@ -88,9 +88,10 @@ extension OTRAppDelegate {
             })
             messagesToMarkAsRead.forEach({ (message) in
                 DDLogInfo("Marking message with no text as read \(message)")
-                if let message = message.copyAsSelf() {
-                    message.read = true
-                    message.save(with: transaction)
+                if let messageData = message.copyAsSelf() {
+                    messageData.setAutoFireTime(message.getAutoFireTime())
+                    messageData.read = true
+                    messageData.save(with: transaction)
                 }
             })
         }, completionBlock: {

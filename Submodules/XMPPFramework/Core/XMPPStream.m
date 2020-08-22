@@ -4555,6 +4555,7 @@ enum XMPPStreamConfig
 	if (sender != parser) return;
 	
 	XMPPLogTrace();
+    XMPPLogRecvPost(@"\n+++++++++++++ xmppParser didReadElement called +++++++++++++++\n");
 	XMPPLogRecvPost(@"RECV: %@", [element compactXMLString]);
 		
 	NSString *elementName = [element name];
