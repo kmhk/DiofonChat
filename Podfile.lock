@@ -1,471 +1,693 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
-    - AFNetworking/NSURLSession
-  - Alamofire (4.9.1)
-  - Appirater (2.3.1)
-  - ARChromeActivity (1.0.6)
-  - BBlock (1.2.1):
-    - BBlock/AppKit (= 1.2.1)
-    - BBlock/Foundation (= 1.2.1)
-    - BBlock/StoreKit (= 1.2.1)
-    - BBlock/UIKit (= 1.2.1)
-  - BBlock/Foundation (1.2.1)
-  - BBlock/StoreKit (1.2.1)
-  - BBlock/UIKit (1.2.1)
-  - BButton (4.0.2)
-  - ChatSecure-Push-iOS (1.1)
-  - ChatSecureCore (0.1.0):
-    - AFNetworking (~> 3.1)
-    - Alamofire (~> 4.4)
-    - Appirater (~> 2.0)
-    - ARChromeActivity (~> 1.0)
-    - BBlock (~> 1.2)
-    - BButton (~> 4.0)
-    - ChatSecure-Push-iOS
-    - CocoaAsyncSocket (~> 7.6.0)
-    - CocoaLumberjack/Swift (~> 3.5.0)
-    - CPAProxy
-    - FormatterKit (~> 1.8)
-    - GCDWebServer (~> 3.4)
-    - HockeySDK-Source
-    - HTMLReader (~> 2.1.1)
-    - IOCipher/GCDWebServer
-    - JSQMessagesViewController
-    - JTSImageViewController (~> 1.4)
-    - Kvitto (~> 1.0)
-    - KVOController (~> 1.2)
-    - libsqlfs/SQLCipher
-    - LicensePlist
-    - LumberjackConsole
-    - Mantle
-    - MaterialComponents/FlexibleHeader (~> 76.0)
-    - MaterialComponents/TextFields (~> 76.0)
-    - MBProgressHUD (~> 1.1)
-    - MWFeedParser (~> 1.0)
-    - OpenInChrome (~> 0.0)
-    - OTRAssets
-    - OTRKit
-    - ParkedTextField
-    - ProxyKit/Client (~> 1.2.0)
-    - PureLayout (~> 3.0)
-    - QRCodeReaderViewController (~> 4.0)
-    - SAMKeychain (~> 1.5)
-    - SignalProtocolObjC
-    - SQLCipher (~> 4.2.0)
-    - TTTAttributedLabel (~> 2.0)
-    - TUSafariActivity (~> 1.0)
-    - VENTouchLock
-    - XLForm (~> 4.0.0)
-    - XMPPFramework/Swift
-    - YapDatabase/SQLCipher (~> 3.1.3)
-    - YapTaskQueue/SQLCipher
-    - ZXingObjC (~> 3.6)
-  - CocoaAsyncSocket (7.6.3)
-  - CocoaLumberjack (3.5.3):
-    - CocoaLumberjack/Core (= 3.5.3)
-  - CocoaLumberjack/Core (3.5.3)
-  - CocoaLumberjack/Swift (3.5.3):
-    - CocoaLumberjack/Core
-  - CPAProxy (1.2.0):
-    - CocoaAsyncSocket
-  - DTFoundation/Core (1.7.14)
-  - DTFoundation/DTASN1 (1.7.14):
-    - DTFoundation/Core
-  - FormatterKit (1.9.0):
-    - FormatterKit/AddressFormatter (= 1.9.0)
-    - FormatterKit/ArrayFormatter (= 1.9.0)
-    - FormatterKit/ColorFormatter (= 1.9.0)
-    - FormatterKit/LocationFormatter (= 1.9.0)
-    - FormatterKit/NameFormatter (= 1.9.0)
-    - FormatterKit/OrdinalNumberFormatter (= 1.9.0)
-    - FormatterKit/Resources (= 1.9.0)
-    - FormatterKit/TimeIntervalFormatter (= 1.9.0)
-    - FormatterKit/UnitOfInformationFormatter (= 1.9.0)
-    - FormatterKit/URLRequestFormatter (= 1.9.0)
-  - FormatterKit/AddressFormatter (1.9.0):
-    - FormatterKit/Resources
-  - FormatterKit/ArrayFormatter (1.9.0):
-    - FormatterKit/Resources
-  - FormatterKit/ColorFormatter (1.9.0):
-    - FormatterKit/Resources
-  - FormatterKit/LocationFormatter (1.9.0):
-    - FormatterKit/Resources
-  - FormatterKit/NameFormatter (1.9.0):
-    - FormatterKit/Resources
-  - FormatterKit/OrdinalNumberFormatter (1.9.0):
-    - FormatterKit/Resources
-  - FormatterKit/Resources (1.9.0)
-  - FormatterKit/TimeIntervalFormatter (1.9.0):
-    - FormatterKit/Resources
-  - FormatterKit/UnitOfInformationFormatter (1.9.0):
-    - FormatterKit/Resources
-  - FormatterKit/URLRequestFormatter (1.9.0):
-    - FormatterKit/Resources
-  - GCDWebServer (3.5.3):
-    - GCDWebServer/Core (= 3.5.3)
-  - GCDWebServer/Core (3.5.3)
-  - HockeySDK-Source (5.1.4)
-  - HTMLReader (2.1.4)
-  - IOCipher/common (0.1.0):
-    - CocoaLumberjack
-    - libsqlfs/SQLCipher
-  - IOCipher/GCDWebServer (0.1.0):
-    - GCDWebServer
-    - IOCipher/common
-  - JSQMessagesViewController (7.3.4)
-  - JTSImageViewController (1.5.1)
-  - KissXML (5.3.1):
-    - KissXML/All (= 5.3.1)
-  - KissXML/Additions (5.3.1):
-    - KissXML/Core
-  - KissXML/All (5.3.1):
-    - KissXML/Additions
-    - KissXML/Core
-  - KissXML/Core (5.3.1)
-  - Kvitto (1.0.3):
-    - DTFoundation/DTASN1 (~> 1.7.13)
-    - Kvitto/Core (= 1.0.3)
-  - Kvitto/Core (1.0.3):
-    - DTFoundation/DTASN1 (~> 1.7.13)
-  - KVOController (1.2.0)
-  - libidn (1.35)
-  - libsqlfs/common (1.3.2)
-  - libsqlfs/SQLCipher (1.3.2):
-    - libsqlfs/common
-    - SQLCipher (>= 3.4.0)
-  - LicensePlist (2.13.0)
-  - LumberjackConsole (3.3.1):
-    - CocoaLumberjack (>= 3.x)
-    - NBUCore (>= 2.1.0)
-  - Mantle (2.1.0):
-    - Mantle/extobjc (= 2.1.0)
-  - Mantle/extobjc (2.1.0)
-  - MaterialComponents/AnimationTiming (76.1.2)
-  - MaterialComponents/FlexibleHeader (76.1.2):
+  - linphone-sdk (4.4.0):
+    - linphone-sdk/all-frameworks (= 4.4.0)
+    - linphone-sdk/app-extension (= 4.4.0)
+    - linphone-sdk/app-extension-swift (= 4.4.0)
+    - linphone-sdk/basic-frameworks (= 4.4.0)
+    - linphone-sdk/swift (= 4.4.0)
+  - linphone-sdk/all-frameworks (4.4.0)
+  - linphone-sdk/app-extension (4.4.0)
+  - linphone-sdk/app-extension-swift (4.4.0):
+    - linphone-sdk/app-extension
+  - linphone-sdk/basic-frameworks (4.4.0):
+    - linphone-sdk/app-extension
+  - linphone-sdk/swift (4.4.0):
+    - linphone-sdk/app-extension-swift
+    - linphone-sdk/basic-frameworks
+  - MaterialComponents (111.0.0):
+    - MaterialComponents/ActionSheet (= 111.0.0)
+    - "MaterialComponents/ActionSheet+Theming (= 111.0.0)"
+    - MaterialComponents/ActivityIndicator (= 111.0.0)
+    - MaterialComponents/AnimationTiming (= 111.0.0)
+    - MaterialComponents/AppBar (= 111.0.0)
+    - "MaterialComponents/AppBar+ColorThemer (= 111.0.0)"
+    - "MaterialComponents/AppBar+Theming (= 111.0.0)"
+    - "MaterialComponents/AppBar+TypographyThemer (= 111.0.0)"
+    - MaterialComponents/Availability (= 111.0.0)
+    - MaterialComponents/Banner (= 111.0.0)
+    - "MaterialComponents/Banner+Theming (= 111.0.0)"
+    - MaterialComponents/BottomAppBar (= 111.0.0)
+    - MaterialComponents/BottomNavigation (= 111.0.0)
+    - "MaterialComponents/BottomNavigation+Theming (= 111.0.0)"
+    - MaterialComponents/BottomSheet (= 111.0.0)
+    - "MaterialComponents/BottomSheet+ShapeThemer (= 111.0.0)"
+    - MaterialComponents/ButtonBar (= 111.0.0)
+    - MaterialComponents/Buttons (= 111.0.0)
+    - "MaterialComponents/Buttons+ButtonThemer (= 111.0.0)"
+    - "MaterialComponents/Buttons+ColorThemer (= 111.0.0)"
+    - "MaterialComponents/Buttons+ShapeThemer (= 111.0.0)"
+    - "MaterialComponents/Buttons+Theming (= 111.0.0)"
+    - "MaterialComponents/Buttons+TitleColorAccessibilityMutator (= 111.0.0)"
+    - "MaterialComponents/Buttons+TypographyThemer (= 111.0.0)"
+    - MaterialComponents/Cards (= 111.0.0)
+    - "MaterialComponents/Cards+Theming (= 111.0.0)"
+    - MaterialComponents/Chips (= 111.0.0)
+    - "MaterialComponents/Chips+Theming (= 111.0.0)"
+    - MaterialComponents/CollectionCells (= 111.0.0)
+    - MaterialComponents/CollectionLayoutAttributes (= 111.0.0)
+    - MaterialComponents/Collections (= 111.0.0)
+    - MaterialComponents/Dialogs (= 111.0.0)
+    - "MaterialComponents/Dialogs+ColorThemer (= 111.0.0)"
+    - "MaterialComponents/Dialogs+Theming (= 111.0.0)"
+    - "MaterialComponents/Dialogs+TypographyThemer (= 111.0.0)"
+    - MaterialComponents/Elevation (= 111.0.0)
+    - MaterialComponents/FeatureHighlight (= 111.0.0)
+    - "MaterialComponents/FeatureHighlight+ColorThemer (= 111.0.0)"
+    - "MaterialComponents/FeatureHighlight+FeatureHighlightAccessibilityMutator (= 111.0.0)"
+    - MaterialComponents/FlexibleHeader (= 111.0.0)
+    - "MaterialComponents/FlexibleHeader+CanAlwaysExpandToMaximumHeight (= 111.0.0)"
+    - "MaterialComponents/FlexibleHeader+ShiftBehavior (= 111.0.0)"
+    - "MaterialComponents/FlexibleHeader+ShiftBehaviorEnabledWithStatusBar (= 111.0.0)"
+    - MaterialComponents/HeaderStackView (= 111.0.0)
+    - "MaterialComponents/HeaderStackView+ColorThemer (= 111.0.0)"
+    - MaterialComponents/Ink (= 111.0.0)
+    - MaterialComponents/LibraryInfo (= 111.0.0)
+    - MaterialComponents/List (= 111.0.0)
+    - "MaterialComponents/List+Theming (= 111.0.0)"
+    - MaterialComponents/NavigationBar (= 111.0.0)
+    - "MaterialComponents/NavigationBar+ColorThemer (= 111.0.0)"
+    - "MaterialComponents/NavigationBar+TypographyThemer (= 111.0.0)"
+    - MaterialComponents/NavigationDrawer (= 111.0.0)
+    - "MaterialComponents/NavigationDrawer+ColorThemer (= 111.0.0)"
+    - "MaterialComponents/NavigationDrawer+Theming (= 111.0.0)"
+    - MaterialComponents/OverlayWindow (= 111.0.0)
+    - MaterialComponents/PageControl (= 111.0.0)
+    - MaterialComponents/Palettes (= 111.0.0)
+    - MaterialComponents/private (= 111.0.0)
+    - MaterialComponents/ProgressView (= 111.0.0)
+    - "MaterialComponents/ProgressView+Theming (= 111.0.0)"
+    - MaterialComponents/Ripple (= 111.0.0)
+    - MaterialComponents/schemes (= 111.0.0)
+    - MaterialComponents/ShadowElevations (= 111.0.0)
+    - MaterialComponents/ShadowLayer (= 111.0.0)
+    - MaterialComponents/ShapeLibrary (= 111.0.0)
+    - MaterialComponents/Shapes (= 111.0.0)
+    - MaterialComponents/Slider (= 111.0.0)
+    - "MaterialComponents/Slider+ColorThemer (= 111.0.0)"
+    - MaterialComponents/Snackbar (= 111.0.0)
+    - "MaterialComponents/Snackbar+FontThemer (= 111.0.0)"
+    - "MaterialComponents/Snackbar+TypographyThemer (= 111.0.0)"
+    - MaterialComponents/Tabs (= 111.0.0)
+    - "MaterialComponents/Tabs+Theming (= 111.0.0)"
+    - "MaterialComponents/Tabs+TypographyThemer (= 111.0.0)"
+    - "MaterialComponents/TextControls+BaseTextAreas (= 111.0.0)"
+    - "MaterialComponents/TextControls+BaseTextFields (= 111.0.0)"
+    - "MaterialComponents/TextControls+Enums (= 111.0.0)"
+    - "MaterialComponents/TextControls+FilledTextAreas (= 111.0.0)"
+    - "MaterialComponents/TextControls+FilledTextAreasTheming (= 111.0.0)"
+    - "MaterialComponents/TextControls+FilledTextFields (= 111.0.0)"
+    - "MaterialComponents/TextControls+FilledTextFieldsTheming (= 111.0.0)"
+    - "MaterialComponents/TextControls+OutlinedTextAreas (= 111.0.0)"
+    - "MaterialComponents/TextControls+OutlinedTextAreasTheming (= 111.0.0)"
+    - "MaterialComponents/TextControls+OutlinedTextFields (= 111.0.0)"
+    - "MaterialComponents/TextControls+OutlinedTextFieldsTheming (= 111.0.0)"
+    - "MaterialComponents/TextControls+UnderlinedTextFields (= 111.0.0)"
+    - "MaterialComponents/TextControls+UnderlinedTextFieldsTheming (= 111.0.0)"
+    - MaterialComponents/TextFields (= 111.0.0)
+    - "MaterialComponents/TextFields+ColorThemer (= 111.0.0)"
+    - "MaterialComponents/TextFields+Theming (= 111.0.0)"
+    - MaterialComponents/Themes (= 111.0.0)
+    - MaterialComponents/Typography (= 111.0.0)
+  - MaterialComponents/ActionSheet (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/BottomSheet
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/Typography
+  - "MaterialComponents/ActionSheet+Theming (111.0.0)":
+    - MaterialComponents/ActionSheet
+    - MaterialComponents/Availability
+    - MaterialComponents/Elevation
+    - MaterialComponents/private/Color
+    - MaterialComponents/schemes/Container
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/ActivityIndicator (111.0.0):
+    - MaterialComponents/Palettes
     - MaterialComponents/private/Application
+    - MDFInternationalization
+    - MotionAnimator (~> 2.0)
+  - MaterialComponents/AnimationTiming (111.0.0)
+  - MaterialComponents/AppBar (111.0.0):
+    - MaterialComponents/FlexibleHeader
+    - MaterialComponents/HeaderStackView
+    - MaterialComponents/NavigationBar
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Icons/ic_arrow_back
     - MaterialComponents/private/UIMetrics
-    - MDFTextAccessibility
-  - MaterialComponents/Palettes (76.1.2)
-  - MaterialComponents/private/Application (76.1.2)
-  - MaterialComponents/private/Math (76.1.2)
-  - MaterialComponents/private/UIMetrics (76.1.2):
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - "MaterialComponents/AppBar+ColorThemer (111.0.0)":
+    - MaterialComponents/AppBar
+    - "MaterialComponents/NavigationBar+ColorThemer"
+    - MaterialComponents/Themes
+  - "MaterialComponents/AppBar+Theming (111.0.0)":
+    - MaterialComponents/AppBar
+    - MaterialComponents/schemes/Container
+  - "MaterialComponents/AppBar+TypographyThemer (111.0.0)":
+    - MaterialComponents/AppBar
+    - "MaterialComponents/NavigationBar+TypographyThemer"
+  - MaterialComponents/Availability (111.0.0)
+  - MaterialComponents/Banner (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/Buttons
+    - MaterialComponents/Elevation
+    - MaterialComponents/Typography
+  - "MaterialComponents/Banner+Theming (111.0.0)":
+    - MaterialComponents/Banner
+    - MaterialComponents/Buttons
+    - "MaterialComponents/Buttons+Theming"
+    - MaterialComponents/Elevation
+    - MaterialComponents/schemes/Container
+    - MaterialComponents/Typography
+  - MaterialComponents/BottomAppBar (111.0.0):
+    - MaterialComponents/Buttons
+    - MaterialComponents/NavigationBar
+    - MaterialComponents/private/Math
+    - MDFInternationalization
+  - MaterialComponents/BottomNavigation (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - "MaterialComponents/BottomNavigation+Theming (111.0.0)":
+    - MaterialComponents/BottomNavigation
+    - MaterialComponents/schemes/Color
+    - MaterialComponents/schemes/Container
+    - MaterialComponents/schemes/Typography
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/BottomSheet (111.0.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/ShapeLibrary
+    - MaterialComponents/Shapes
+  - "MaterialComponents/BottomSheet+ShapeThemer (111.0.0)":
+    - MaterialComponents/BottomSheet
+    - MaterialComponents/schemes/Shape
+  - MaterialComponents/ButtonBar (111.0.0):
+    - MaterialComponents/Buttons
     - MaterialComponents/private/Application
-  - MaterialComponents/TextFields (76.1.2):
+    - MDFInternationalization
+  - MaterialComponents/Buttons (111.0.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/ShapeLibrary
+    - MaterialComponents/Shapes
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - "MaterialComponents/Buttons+ButtonThemer (111.0.0)":
+    - MaterialComponents/Buttons
+    - "MaterialComponents/Buttons+ColorThemer"
+    - "MaterialComponents/Buttons+ShapeThemer"
+    - "MaterialComponents/Buttons+TypographyThemer"
+    - MaterialComponents/Palettes
+  - "MaterialComponents/Buttons+ColorThemer (111.0.0)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Color
+  - "MaterialComponents/Buttons+ShapeThemer (111.0.0)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Shape
+  - "MaterialComponents/Buttons+Theming (111.0.0)":
+    - MaterialComponents/Buttons
+    - "MaterialComponents/Buttons+ColorThemer"
+    - "MaterialComponents/Buttons+ShapeThemer"
+    - "MaterialComponents/Buttons+TypographyThemer"
+    - MaterialComponents/schemes/Container
+    - MaterialComponents/ShadowElevations
+  - "MaterialComponents/Buttons+TitleColorAccessibilityMutator (111.0.0)":
+    - MaterialComponents/Buttons
+    - MDFTextAccessibility
+  - "MaterialComponents/Buttons+TypographyThemer (111.0.0)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Typography
+  - MaterialComponents/Cards (111.0.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Icons/ic_check_circle
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+  - "MaterialComponents/Cards+Theming (111.0.0)":
+    - MaterialComponents/Cards
+    - MaterialComponents/schemes/Container
+  - MaterialComponents/Chips (111.0.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/ShapeLibrary
+    - MaterialComponents/Shapes
+    - MaterialComponents/TextFields
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - "MaterialComponents/Chips+Theming (111.0.0)":
+    - MaterialComponents/Chips
+    - MaterialComponents/schemes/Container
+    - MaterialComponents/Typography
+  - MaterialComponents/CollectionCells (111.0.0):
+    - MaterialComponents/CollectionLayoutAttributes
+    - MaterialComponents/Ink
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Icons/ic_check
+    - MaterialComponents/private/Icons/ic_check_circle
+    - MaterialComponents/private/Icons/ic_chevron_right
+    - MaterialComponents/private/Icons/ic_info
+    - MaterialComponents/private/Icons/ic_radio_button_unchecked
+    - MaterialComponents/private/Icons/ic_reorder
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/CollectionLayoutAttributes (111.0.0)
+  - MaterialComponents/Collections (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/CollectionCells
+    - MaterialComponents/CollectionLayoutAttributes
+    - MaterialComponents/Ink
+    - MaterialComponents/Palettes
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+  - MaterialComponents/Dialogs (111.0.0):
+    - MaterialComponents/Buttons
+    - MaterialComponents/Elevation
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - "MaterialComponents/Dialogs+ColorThemer (111.0.0)":
+    - "MaterialComponents/Buttons+ColorThemer"
+    - MaterialComponents/Dialogs
+    - MaterialComponents/Themes
+  - "MaterialComponents/Dialogs+Theming (111.0.0)":
+    - "MaterialComponents/Buttons+Theming"
+    - MaterialComponents/Dialogs
+    - "MaterialComponents/Dialogs+ColorThemer"
+    - "MaterialComponents/Dialogs+TypographyThemer"
+    - MaterialComponents/schemes/Container
+    - MaterialComponents/ShadowElevations
+  - "MaterialComponents/Dialogs+TypographyThemer (111.0.0)":
+    - "MaterialComponents/Buttons+TypographyThemer"
+    - MaterialComponents/Dialogs
+    - MaterialComponents/schemes/Typography
+  - MaterialComponents/Elevation (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/FeatureHighlight (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFTextAccessibility
+  - "MaterialComponents/FeatureHighlight+ColorThemer (111.0.0)":
+    - MaterialComponents/FeatureHighlight
+    - MaterialComponents/Themes
+  - "MaterialComponents/FeatureHighlight+FeatureHighlightAccessibilityMutator (111.0.0)":
+    - MaterialComponents/FeatureHighlight
+    - MDFTextAccessibility
+  - MaterialComponents/FlexibleHeader (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/Elevation
+    - "MaterialComponents/FlexibleHeader+ShiftBehavior"
+    - "MaterialComponents/FlexibleHeader+ShiftBehaviorEnabledWithStatusBar"
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/UIMetrics
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MDFTextAccessibility
+  - "MaterialComponents/FlexibleHeader+CanAlwaysExpandToMaximumHeight (111.0.0)":
+    - MaterialComponents/FlexibleHeader
+  - "MaterialComponents/FlexibleHeader+ShiftBehavior (111.0.0)"
+  - "MaterialComponents/FlexibleHeader+ShiftBehaviorEnabledWithStatusBar (111.0.0)":
+    - "MaterialComponents/FlexibleHeader+ShiftBehavior"
+  - MaterialComponents/HeaderStackView (111.0.0)
+  - "MaterialComponents/HeaderStackView+ColorThemer (111.0.0)":
+    - MaterialComponents/HeaderStackView
+    - MaterialComponents/Themes
+  - MaterialComponents/Ink (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/LibraryInfo (111.0.0)
+  - MaterialComponents/List (111.0.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - "MaterialComponents/List+Theming (111.0.0)":
+    - MaterialComponents/List
+    - MaterialComponents/schemes/Container
+  - MaterialComponents/NavigationBar (111.0.0):
+    - MaterialComponents/ButtonBar
+    - MaterialComponents/Elevation
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - "MaterialComponents/NavigationBar+ColorThemer (111.0.0)":
+    - MaterialComponents/NavigationBar
+    - MaterialComponents/schemes/Color
+  - "MaterialComponents/NavigationBar+TypographyThemer (111.0.0)":
+    - MaterialComponents/NavigationBar
+    - MaterialComponents/schemes/Typography
+  - MaterialComponents/NavigationDrawer (111.0.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/UIMetrics
+    - MaterialComponents/ShadowLayer
+  - "MaterialComponents/NavigationDrawer+ColorThemer (111.0.0)":
+    - MaterialComponents/NavigationDrawer
+    - MaterialComponents/schemes/Color
+  - "MaterialComponents/NavigationDrawer+Theming (111.0.0)":
+    - MaterialComponents/NavigationDrawer
+    - MaterialComponents/schemes/Container
+  - MaterialComponents/OverlayWindow (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Application
+  - MaterialComponents/PageControl (111.0.0):
+    - MDFInternationalization
+  - MaterialComponents/Palettes (111.0.0)
+  - MaterialComponents/private (111.0.0):
+    - MaterialComponents/private/Application (= 111.0.0)
+    - MaterialComponents/private/Color (= 111.0.0)
+    - MaterialComponents/private/Icons (= 111.0.0)
+    - MaterialComponents/private/KeyboardWatcher (= 111.0.0)
+    - MaterialComponents/private/Math (= 111.0.0)
+    - MaterialComponents/private/Overlay (= 111.0.0)
+    - "MaterialComponents/private/TextControlsPrivate+BaseStyle (= 111.0.0)"
+    - "MaterialComponents/private/TextControlsPrivate+FilledStyle (= 111.0.0)"
+    - "MaterialComponents/private/TextControlsPrivate+OutlinedStyle (= 111.0.0)"
+    - "MaterialComponents/private/TextControlsPrivate+Shared (= 111.0.0)"
+    - "MaterialComponents/private/TextControlsPrivate+TextFields (= 111.0.0)"
+    - "MaterialComponents/private/TextControlsPrivate+UnderlinedStyle (= 111.0.0)"
+    - MaterialComponents/private/ThumbTrack (= 111.0.0)
+    - MaterialComponents/private/UIMetrics (= 111.0.0)
+  - MaterialComponents/private/Application (111.0.0)
+  - MaterialComponents/private/Color (111.0.0):
+    - MaterialComponents/Availability
+  - MaterialComponents/private/Icons (111.0.0):
+    - MaterialComponents/private/Icons/Base (= 111.0.0)
+    - MaterialComponents/private/Icons/ic_arrow_back (= 111.0.0)
+    - MaterialComponents/private/Icons/ic_check (= 111.0.0)
+    - MaterialComponents/private/Icons/ic_check_circle (= 111.0.0)
+    - MaterialComponents/private/Icons/ic_chevron_right (= 111.0.0)
+    - MaterialComponents/private/Icons/ic_color_lens (= 111.0.0)
+    - MaterialComponents/private/Icons/ic_help_outline (= 111.0.0)
+    - MaterialComponents/private/Icons/ic_info (= 111.0.0)
+    - MaterialComponents/private/Icons/ic_more_horiz (= 111.0.0)
+    - MaterialComponents/private/Icons/ic_radio_button_unchecked (= 111.0.0)
+    - MaterialComponents/private/Icons/ic_reorder (= 111.0.0)
+    - MaterialComponents/private/Icons/ic_settings (= 111.0.0)
+  - MaterialComponents/private/Icons/Base (111.0.0)
+  - MaterialComponents/private/Icons/ic_arrow_back (111.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_check (111.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_check_circle (111.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_chevron_right (111.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_color_lens (111.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_help_outline (111.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_info (111.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_more_horiz (111.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_radio_button_unchecked (111.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_reorder (111.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_settings (111.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/KeyboardWatcher (111.0.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (111.0.0)
+  - MaterialComponents/private/Overlay (111.0.0)
+  - "MaterialComponents/private/TextControlsPrivate+BaseStyle (111.0.0)":
     - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Math
+    - "MaterialComponents/private/TextControlsPrivate+Shared"
+  - "MaterialComponents/private/TextControlsPrivate+FilledStyle (111.0.0)":
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Math
+    - "MaterialComponents/private/TextControlsPrivate+Shared"
+    - "MaterialComponents/private/TextControlsPrivate+UnderlinedStyle"
+  - "MaterialComponents/private/TextControlsPrivate+OutlinedStyle (111.0.0)":
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Math
+    - "MaterialComponents/private/TextControlsPrivate+Shared"
+  - "MaterialComponents/private/TextControlsPrivate+Shared (111.0.0)":
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Math
+    - "MaterialComponents/TextControls+Enums"
+  - "MaterialComponents/private/TextControlsPrivate+TextFields (111.0.0)":
+    - MaterialComponents/private/Math
+    - "MaterialComponents/private/TextControlsPrivate+Shared"
+  - "MaterialComponents/private/TextControlsPrivate+UnderlinedStyle (111.0.0)":
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Math
+    - "MaterialComponents/private/TextControlsPrivate+Shared"
+  - MaterialComponents/private/ThumbTrack (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/private/UIMetrics (111.0.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/ProgressView (111.0.0):
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MDFInternationalization
+  - "MaterialComponents/ProgressView+Theming (111.0.0)":
+    - MaterialComponents/ProgressView
+    - MaterialComponents/schemes/Container
+  - MaterialComponents/Ripple (111.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/schemes (111.0.0):
+    - MaterialComponents/schemes/Color (= 111.0.0)
+    - MaterialComponents/schemes/Container (= 111.0.0)
+    - MaterialComponents/schemes/Shape (= 111.0.0)
+    - MaterialComponents/schemes/Typography (= 111.0.0)
+    - "MaterialComponents/schemes/Typography+BasicFontScheme (= 111.0.0)"
+    - "MaterialComponents/schemes/Typography+Scheming (= 111.0.0)"
+  - MaterialComponents/schemes/Color (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+  - MaterialComponents/schemes/Container (111.0.0):
+    - MaterialComponents/schemes/Color
+    - MaterialComponents/schemes/Shape
+    - MaterialComponents/schemes/Typography
+  - MaterialComponents/schemes/Shape (111.0.0):
+    - MaterialComponents/ShapeLibrary
+    - MaterialComponents/Shapes
+  - MaterialComponents/schemes/Typography (111.0.0):
+    - "MaterialComponents/schemes/Typography+BasicFontScheme"
+    - "MaterialComponents/schemes/Typography+Scheming"
+    - MaterialComponents/Typography
+  - "MaterialComponents/schemes/Typography+BasicFontScheme (111.0.0)"
+  - "MaterialComponents/schemes/Typography+Scheming (111.0.0)"
+  - MaterialComponents/ShadowElevations (111.0.0)
+  - MaterialComponents/ShadowLayer (111.0.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/ShapeLibrary (111.0.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/Shapes
+  - MaterialComponents/Shapes (111.0.0):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Slider (111.0.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/ThumbTrack
+    - MaterialComponents/ShadowElevations
+  - "MaterialComponents/Slider+ColorThemer (111.0.0)":
+    - MaterialComponents/Palettes
+    - MaterialComponents/schemes/Color
+    - MaterialComponents/Slider
+  - MaterialComponents/Snackbar (111.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Availability
+    - MaterialComponents/Buttons
+    - MaterialComponents/Elevation
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+  - "MaterialComponents/Snackbar+FontThemer (111.0.0)":
+    - MaterialComponents/Snackbar
+    - MaterialComponents/Themes
+  - "MaterialComponents/Snackbar+TypographyThemer (111.0.0)":
+    - MaterialComponents/schemes/Typography
+    - MaterialComponents/Snackbar
+  - MaterialComponents/Tabs (111.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - "MaterialComponents/Tabs+Theming (111.0.0)":
+    - MaterialComponents/schemes/Container
+    - MaterialComponents/Tabs
+    - "MaterialComponents/Tabs+TypographyThemer"
+  - "MaterialComponents/Tabs+TypographyThemer (111.0.0)":
+    - MaterialComponents/schemes/Typography
+    - MaterialComponents/Tabs
+  - "MaterialComponents/TextControls+BaseTextAreas (111.0.0)":
+    - "MaterialComponents/private/TextControlsPrivate+BaseStyle"
+    - "MaterialComponents/private/TextControlsPrivate+Shared"
+    - MDFInternationalization
+  - "MaterialComponents/TextControls+BaseTextFields (111.0.0)":
+    - "MaterialComponents/private/TextControlsPrivate+BaseStyle"
+    - "MaterialComponents/private/TextControlsPrivate+Shared"
+    - "MaterialComponents/private/TextControlsPrivate+TextFields"
+    - MDFInternationalization
+  - "MaterialComponents/TextControls+Enums (111.0.0)"
+  - "MaterialComponents/TextControls+FilledTextAreas (111.0.0)":
+    - MaterialComponents/Availability
+    - "MaterialComponents/private/TextControlsPrivate+FilledStyle"
+    - "MaterialComponents/TextControls+BaseTextAreas"
+  - "MaterialComponents/TextControls+FilledTextAreasTheming (111.0.0)":
+    - MaterialComponents/schemes/Container
+    - "MaterialComponents/TextControls+FilledTextAreas"
+  - "MaterialComponents/TextControls+FilledTextFields (111.0.0)":
+    - MaterialComponents/Availability
+    - "MaterialComponents/private/TextControlsPrivate+FilledStyle"
+    - "MaterialComponents/TextControls+BaseTextFields"
+  - "MaterialComponents/TextControls+FilledTextFieldsTheming (111.0.0)":
+    - MaterialComponents/schemes/Container
+    - "MaterialComponents/TextControls+FilledTextFields"
+  - "MaterialComponents/TextControls+OutlinedTextAreas (111.0.0)":
+    - MaterialComponents/Availability
+    - "MaterialComponents/private/TextControlsPrivate+OutlinedStyle"
+    - "MaterialComponents/TextControls+BaseTextAreas"
+  - "MaterialComponents/TextControls+OutlinedTextAreasTheming (111.0.0)":
+    - MaterialComponents/schemes/Container
+    - "MaterialComponents/TextControls+OutlinedTextAreas"
+  - "MaterialComponents/TextControls+OutlinedTextFields (111.0.0)":
+    - MaterialComponents/Availability
+    - "MaterialComponents/private/TextControlsPrivate+OutlinedStyle"
+    - "MaterialComponents/TextControls+BaseTextFields"
+  - "MaterialComponents/TextControls+OutlinedTextFieldsTheming (111.0.0)":
+    - MaterialComponents/schemes/Container
+    - "MaterialComponents/TextControls+OutlinedTextFields"
+  - "MaterialComponents/TextControls+UnderlinedTextFields (111.0.0)":
+    - MaterialComponents/Availability
+    - "MaterialComponents/private/TextControlsPrivate+UnderlinedStyle"
+    - "MaterialComponents/TextControls+BaseTextFields"
+  - "MaterialComponents/TextControls+UnderlinedTextFieldsTheming (111.0.0)":
+    - MaterialComponents/schemes/Container
+    - "MaterialComponents/TextControls+UnderlinedTextFields"
+  - MaterialComponents/TextFields (111.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/Elevation
     - MaterialComponents/Palettes
     - MaterialComponents/private/Math
     - MaterialComponents/Typography
     - MDFInternationalization
-  - MaterialComponents/Typography (76.1.2):
+  - "MaterialComponents/TextFields+ColorThemer (111.0.0)":
+    - MaterialComponents/TextFields
+    - MaterialComponents/Themes
+  - "MaterialComponents/TextFields+Theming (111.0.0)":
+    - MaterialComponents/schemes/Container
+    - MaterialComponents/TextFields
+    - "MaterialComponents/TextFields+ColorThemer"
+  - MaterialComponents/Themes (111.0.0):
+    - MaterialComponents/schemes/Color
+    - MaterialComponents/schemes/Typography
+  - MaterialComponents/Typography (111.0.0):
     - MaterialComponents/private/Application
     - MaterialComponents/private/Math
-  - MBProgressHUD (1.2.0)
+    - MDFTextAccessibility
   - MDFInternationalization (2.0.0)
   - MDFTextAccessibility (2.0.0)
-  - MWFeedParser (1.0.1):
-    - MWFeedParser/FeedParser (= 1.0.1)
-    - "MWFeedParser/NSDate+InternetDateTime (= 1.0.1)"
-    - "MWFeedParser/NSString+HTML (= 1.0.1)"
-  - MWFeedParser/FeedParser (1.0.1):
-    - "MWFeedParser/NSDate+InternetDateTime"
-    - "MWFeedParser/NSString+HTML"
-  - "MWFeedParser/NSDate+InternetDateTime (1.0.1)"
-  - "MWFeedParser/NSString+HTML (1.0.1)"
-  - NBUCore (2.1.0)
-  - OpenInChrome (0.0.1)
-  - OTRAssets (0.1.0)
-  - OTRKit (2.0.0)
-  - ParkedTextField (0.5.0)
-  - ProxyKit/Client (1.2.0):
-    - ProxyKit/common
-  - ProxyKit/common (1.2.0):
-    - CocoaAsyncSocket (~> 7.6)
-    - CocoaLumberjack
-  - PureLayout (3.1.5)
+  - MotionAnimator (2.8.1):
+    - MotionInterchange (~> 1.6)
+  - MotionInterchange (1.6.0)
   - QRCodeReaderViewController (4.0.2)
-  - SAMKeychain (1.5.3)
-  - SignalProtocolC (2.3.2)
-  - SignalProtocolObjC (1.1.0):
-    - SignalProtocolC (~> 2.3.2)
-  - SQLCipher (4.2.0):
-    - SQLCipher/standard (= 4.2.0)
-  - SQLCipher/common (4.2.0)
-  - SQLCipher/standard (4.2.0):
-    - SQLCipher/common
-  - SSKeychain (1.4.1)
-  - TTTAttributedLabel (2.0.0)
-  - TUSafariActivity (1.0.4)
-  - VENTouchLock (1.12.0):
-    - SSKeychain (~> 1.0)
-  - XLForm (4.0.1)
-  - XMPPFramework/default (4.0.0):
-    - CocoaAsyncSocket (~> 7.6)
-    - CocoaLumberjack
-    - KissXML (~> 5.2)
-    - libidn (~> 1.35)
-  - XMPPFramework/Swift (4.0.0):
-    - CocoaLumberjack/Swift
-    - XMPPFramework/default
-  - YapDatabase/SQLCipher (3.1.4):
-    - YapDatabase/SQLCipher/Core (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions (= 3.1.4)
-  - YapDatabase/SQLCipher/Core (3.1.4):
-    - CocoaLumberjack
-    - SQLCipher (>= 3.4.0)
-  - YapDatabase/SQLCipher/Extensions (3.1.4):
-    - YapDatabase/SQLCipher/Core
-    - YapDatabase/SQLCipher/Extensions/ActionManager (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/AutoView (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/CloudCore (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/CloudKit (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/ConnectionPool (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/ConnectionProxy (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/CrossProcessNotification (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/FilteredView (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/FullTextSearch (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/Hooks (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/ManualView (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/Relationships (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/RTreeIndex (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/SearchResultsView (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/SecondaryIndex (= 3.1.4)
-    - YapDatabase/SQLCipher/Extensions/View (= 3.1.4)
-  - YapDatabase/SQLCipher/Extensions/ActionManager (3.1.4):
-    - YapDatabase/SQLCipher/Core
-    - YapDatabase/SQLCipher/Extensions/AutoView
-  - YapDatabase/SQLCipher/Extensions/AutoView (3.1.4):
-    - YapDatabase/SQLCipher/Core
-    - YapDatabase/SQLCipher/Extensions/View
-  - YapDatabase/SQLCipher/Extensions/CloudCore (3.1.4):
-    - YapDatabase/SQLCipher/Core
-  - YapDatabase/SQLCipher/Extensions/CloudKit (3.1.4):
-    - YapDatabase/SQLCipher/Core
-  - YapDatabase/SQLCipher/Extensions/ConnectionPool (3.1.4):
-    - YapDatabase/SQLCipher/Core
-  - YapDatabase/SQLCipher/Extensions/ConnectionProxy (3.1.4):
-    - YapDatabase/SQLCipher/Core
-  - YapDatabase/SQLCipher/Extensions/CrossProcessNotification (3.1.4):
-    - YapDatabase/SQLCipher/Core
-  - YapDatabase/SQLCipher/Extensions/FilteredView (3.1.4):
-    - YapDatabase/SQLCipher/Core
-    - YapDatabase/SQLCipher/Extensions/View
-  - YapDatabase/SQLCipher/Extensions/FullTextSearch (3.1.4):
-    - YapDatabase/SQLCipher/Core
-  - YapDatabase/SQLCipher/Extensions/Hooks (3.1.4):
-    - YapDatabase/SQLCipher/Core
-  - YapDatabase/SQLCipher/Extensions/ManualView (3.1.4):
-    - YapDatabase/SQLCipher/Core
-    - YapDatabase/SQLCipher/Extensions/View
-  - YapDatabase/SQLCipher/Extensions/Relationships (3.1.4):
-    - YapDatabase/SQLCipher/Core
-  - YapDatabase/SQLCipher/Extensions/RTreeIndex (3.1.4):
-    - YapDatabase/SQLCipher/Core
-  - YapDatabase/SQLCipher/Extensions/SearchResultsView (3.1.4):
-    - YapDatabase/SQLCipher/Core
-    - YapDatabase/SQLCipher/Extensions/AutoView
-    - YapDatabase/SQLCipher/Extensions/FullTextSearch
-  - YapDatabase/SQLCipher/Extensions/SecondaryIndex (3.1.4):
-    - YapDatabase/SQLCipher/Core
-  - YapDatabase/SQLCipher/Extensions/View (3.1.4):
-    - YapDatabase/SQLCipher/Core
-  - YapTaskQueue/SQLCipher (0.3.0):
-    - YapDatabase/SQLCipher (~> 3.0)
-  - ZXingObjC (3.6.5):
-    - ZXingObjC/All (= 3.6.5)
-  - ZXingObjC/All (3.6.5)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.4)
-  - Appirater (~> 2.0)
-  - ARChromeActivity (~> 1.0)
-  - BBlock (~> 1.2)
-  - BButton (~> 4.0)
-  - ChatSecure-Push-iOS (from `Submodules/ChatSecure-Push-iOS/ChatSecure-Push-iOS.podspec`)
-  - ChatSecureCore (from `ChatSecureCore.podspec`)
-  - CocoaAsyncSocket (~> 7.6.0)
-  - CocoaLumberjack/Swift (~> 3.5.0)
-  - CPAProxy (from `Submodules/CPAProxy/CPAProxy.podspec`)
-  - GCDWebServer (~> 3.4)
-  - HockeySDK-Source
-  - IOCipher/GCDWebServer (from `Submodules/IOCipher/IOCipher.podspec`)
-  - JSQMessagesViewController (from `Submodules/JSQMessagesViewController/JSQMessagesViewController.podspec`)
-  - JTSImageViewController (~> 1.4)
-  - Kvitto (~> 1.0)
-  - libsqlfs/SQLCipher (from `https://github.com/ChatSecure/libsqlfs.git`, branch `1.3.2-chatsecure`)
-  - LicensePlist
-  - LumberjackConsole (from `Submodules/LumberjackConsole/LumberjackConsole.podspec`)
-  - Mantle (from `Podspecs/Mantle.podspec.json`)
-  - MWFeedParser (~> 1.0)
-  - OpenInChrome (~> 0.0)
-  - OTRAssets (from `OTRAssets.podspec`)
-  - OTRKit (from `Submodules/OTRKit/OTRKit.podspec`)
-  - ParkedTextField (from `https://github.com/gmertk/ParkedTextField.git`, commit `a3800e3`)
-  - ProxyKit/Client (~> 1.2.0)
+  - linphone-sdk (= 4.4.0)
+  - MaterialComponents (~> 111.0)
   - QRCodeReaderViewController (~> 4.0)
-  - SignalProtocolObjC (from `Submodules/SignalProtocol-ObjC/SignalProtocolObjC.podspec`)
-  - SQLCipher (~> 4.2)
-  - TUSafariActivity (~> 1.0)
-  - XMPPFramework/Swift (from `Submodules/XMPPFramework/XMPPFramework.podspec`)
-  - YapDatabase/SQLCipher (~> 3.1.3)
-  - YapTaskQueue/SQLCipher (from `https://github.com/ChatSecure/YapTaskQueue.git`, branch `swift4`)
+  - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - AFNetworking
-    - Alamofire
-    - Appirater
-    - ARChromeActivity
-    - BBlock
-    - BButton
-    - CocoaAsyncSocket
-    - CocoaLumberjack
-    - DTFoundation
-    - FormatterKit
-    - GCDWebServer
-    - HockeySDK-Source
-    - HTMLReader
-    - JTSImageViewController
-    - KissXML
-    - Kvitto
-    - KVOController
-    - libidn
-    - LicensePlist
     - MaterialComponents
-    - MBProgressHUD
     - MDFInternationalization
     - MDFTextAccessibility
-    - MWFeedParser
-    - NBUCore
-    - OpenInChrome
-    - ProxyKit
-    - PureLayout
+    - MotionAnimator
+    - MotionInterchange
     - QRCodeReaderViewController
-    - SAMKeychain
-    - SignalProtocolC
-    - SQLCipher
-    - SSKeychain
-    - TTTAttributedLabel
-    - TUSafariActivity
-    - VENTouchLock
-    - XLForm
-    - YapDatabase
-    - ZXingObjC
-
-EXTERNAL SOURCES:
-  ChatSecure-Push-iOS:
-    :path: Submodules/ChatSecure-Push-iOS/ChatSecure-Push-iOS.podspec
-  ChatSecureCore:
-    :path: ChatSecureCore.podspec
-  CPAProxy:
-    :path: Submodules/CPAProxy/CPAProxy.podspec
-  IOCipher:
-    :path: Submodules/IOCipher/IOCipher.podspec
-  JSQMessagesViewController:
-    :path: Submodules/JSQMessagesViewController/JSQMessagesViewController.podspec
-  libsqlfs:
-    :branch: 1.3.2-chatsecure
-    :git: https://github.com/ChatSecure/libsqlfs.git
-  LumberjackConsole:
-    :path: Submodules/LumberjackConsole/LumberjackConsole.podspec
-  Mantle:
-    :podspec: Podspecs/Mantle.podspec.json
-  OTRAssets:
-    :path: OTRAssets.podspec
-  OTRKit:
-    :path: Submodules/OTRKit/OTRKit.podspec
-  ParkedTextField:
-    :commit: a3800e3
-    :git: https://github.com/gmertk/ParkedTextField.git
-  SignalProtocolObjC:
-    :path: Submodules/SignalProtocol-ObjC/SignalProtocolObjC.podspec
-  XMPPFramework:
-    :path: Submodules/XMPPFramework/XMPPFramework.podspec
-  YapTaskQueue:
-    :branch: swift4
-    :git: https://github.com/ChatSecure/YapTaskQueue.git
-
-CHECKOUT OPTIONS:
-  libsqlfs:
-    :commit: 4456f8a83c7af7dc6b8cf6456dae94fe7979c24c
-    :git: https://github.com/ChatSecure/libsqlfs.git
-  Mantle:
-    :commit: 9aadbd27b1cc161dca884ec0cef198fa56e83d11
-    :git: https://github.com/ChatSecure/Mantle.git
-  ParkedTextField:
-    :commit: a3800e3
-    :git: https://github.com/gmertk/ParkedTextField.git
-  YapTaskQueue:
-    :commit: a18a8f1882d2d94a51cf1bf743d09734898387b1
-    :git: https://github.com/ChatSecure/YapTaskQueue.git
+    - SVProgressHUD
+  https://gitlab.linphone.org/BC/public/podspec.git:
+    - linphone-sdk
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  Appirater: 44a4651f7912a17dc906b655f0c215d5bb768b84
-  ARChromeActivity: 5dcf9b9f09323761f992aff3525cdd777f83609d
-  BBlock: c56d7f72597ffe1634fcdc73836c5c0fed3271be
-  BButton: ab0f2ed3b998ae73c5188b57d270d81e4a1eeb27
-  ChatSecure-Push-iOS: ed51f98bc019be9e2d859604677a21a4ee68422e
-  ChatSecureCore: 3dbcb2264d3dbb8613176a2efe1005df1e64e9fe
-  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
-  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
-  CPAProxy: a99dea60c17d81147c728123138537e815341ea6
-  DTFoundation: 25aa19bb7c6e225b1dfae195604fb8cf1da0ab4c
-  FormatterKit: 184db51bf120b633693a73624a4cede89ec51a41
-  GCDWebServer: c0ab22c73e1b84f358d1e2f74bf6afd1c60829f2
-  HockeySDK-Source: ebf3378833f457fa08aa452352b105dc21bfebcb
-  HTMLReader: 2fc5ccf6a041b7070d9b43b101034cba63d2ae2a
-  IOCipher: 89435857693a11d24024cbc3da541549eb36fb0e
-  JSQMessagesViewController: eade14c4687901c4e53dec681b8e3021269a2b38
-  JTSImageViewController: 1f8ce1cc93dab0d0af8e53badeea7528560cfec9
-  KissXML: 5c8e0f2e8b9f071d3e1ae123dec3eb5da615c10c
-  Kvitto: d451f893f84ad669850b7cb7d3f8781363e14232
-  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
-  libidn: e4576a956b797c584c77aaedfc6e3dd639b61bdc
-  libsqlfs: b3c1be163c2fba6b041379cfa5861033783ddae9
-  LicensePlist: a5395002c74b45c38bb8661374f5608534f0f5a7
-  LumberjackConsole: 218fed8e807ba6ce0bedbba06b7b295dc0efaf0c
-  Mantle: bdb09649c721dcefc53132f3767f6e40d4d47740
-  MaterialComponents: 1aef341d47fbaed37ddb5163a01af94cb6da8506
-  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  linphone-sdk: c5765e58b2b17f292e7792c6f4b231dfe4079c68
+  MaterialComponents: 533042da998b97ad13a6f544268f8026e8161cc5
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
-  MWFeedParser: 2cf646014c1baf6ad1b08c480b40a08180079247
-  NBUCore: 201af50441f48513ef6d5823a5fc12c9e1f288cd
-  OpenInChrome: f1f3f9dec682216fe78a0d7fe0b5b263d6312c32
-  OTRAssets: 9b824cfbe6bdcbf71ac504688031d90f0d460b61
-  OTRKit: 0b36882ef751acebc52f0ad6d8daea421668e95f
-  ParkedTextField: 865c835f54b39c611b580e0fe60199538cbc2f67
-  ProxyKit: ae9ed36909d0e68b27087eb3ed5aa35c86f8bff0
-  PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
+  MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
+  MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   QRCodeReaderViewController: e8f27d035b3e72b1d4b1c61ff66458287e3be0ff
-  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  SignalProtocolC: 051512e9f3abfeb4120c5e9673af9ae0ee370070
-  SignalProtocolObjC: b992ed29c3b7b453510ff0102ed16ef143f7efd2
-  SQLCipher: 0187a2180ac288ea686b670b7141da62cd013b16
-  SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
-  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
-  TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
-  VENTouchLock: 20d378b9c6173e2c054448aeb3fb2f40822a9f3f
-  XLForm: b8d47a9a00fb6166981cb40de7169d70d611e9be
-  XMPPFramework: 5d31ff9f73dce031b24bc49bcf88093627a3a86e
-  YapDatabase: e9cf10cbf11d91f7c6dc723b0ff54fa8a04e3c8d
-  YapTaskQueue: f3b23875bead71a7ee57b65637ce9c0e98b68c34
-  ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 4676489299844a046675aed0d69100fe56cb8b31
+PODFILE CHECKSUM: 4c00521ba9e13762e7144a2963b778991049dc90
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

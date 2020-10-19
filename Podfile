@@ -1,87 +1,101 @@
-# Disable CocoaPods deterministic UUIDs as Pods are not checked in
-ENV["COCOAPODS_DISABLE_DETERMINISTIC_UUIDS"] = "true"
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+source "https://gitlab.linphone.org/BC/public/podspec.git"
+source "https://github.com/CocoaPods/Specs.git"
 
-# Disable Bitcode for all targets http://stackoverflow.com/a/32685434/805882
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['ENABLE_BITCODE'] = 'NO'
-      config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS'] = 'NO'
-      config.build_settings['CLANG_WARN_STRICT_PROTOTYPES'] = 'NO'
-      if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 8.0
-        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '8.0'
-      end
-    end
-  end
+def all_pods
+	if ENV['PODFILE_PATH'].nil?
+		pod 'linphone-sdk', '4.4.0'
+	else
+		pod 'linphone-sdk', :path => ENV['PODFILE_PATH']  # local sdk
+	end
+
+	crashlytics
 end
 
-platform :ios, "9.0"
-
-use_modular_headers!
-inhibit_all_warnings!
-
-source 'https://github.com/CocoaPods/Specs.git'
-
-abstract_target 'ChatSecureCorePods' do
-  # User Interface
-  pod "Appirater", '~> 2.0'
-  pod 'OpenInChrome', '~> 0.0'
-  pod 'JTSImageViewController', '~> 1.4'
-  pod 'BButton', '~> 4.0'
-  pod 'TUSafariActivity', '~> 1.0'
-  pod 'ARChromeActivity', '~> 1.0'
+def tribu
   pod 'QRCodeReaderViewController', '~> 4.0'
-  # pod 'ParkedTextField', '~> 0.3.1'
-  pod 'ParkedTextField', :git => 'https://github.com/gmertk/ParkedTextField.git', :commit => 'a3800e3' # Swift 4.2
+  pod 'MaterialComponents', '~> 111.0'
+end
 
+def crashlytics
+	if not ENV['USE_CRASHLYTICS'].nil?
+		pod 'Firebase/Analytics'
+		pod 'Firebase/Crashlytics'
+	end
+end
 
-  pod 'JSQMessagesViewController', :path => 'Submodules/JSQMessagesViewController/JSQMessagesViewController.podspec'
+target 'linphone' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  use_frameworks!
 
-  # pod 'LumberjackConsole', '~> 3.3.0'
-  pod 'LumberjackConsole', :path => 'Submodules/LumberjackConsole/LumberjackConsole.podspec'
+  # Pods for linphone
+	pod 'SVProgressHUD'
+	all_pods
+  tribu
 
-  # Utility
-  pod 'CocoaLumberjack/Swift', '~> 3.5.0'
-  pod 'MWFeedParser', '~> 1.0'
-  pod 'BBlock', '~> 1.2'
-  pod 'HockeySDK-Source'
-  pod 'LicensePlist'
+end
 
-  # Network
-  pod 'CocoaAsyncSocket', '~> 7.6.0'
-  pod 'ProxyKit/Client', '~> 1.2.0'
-  pod 'GCDWebServer', '~> 3.4'
-  pod 'CPAProxy', :path => 'Submodules/CPAProxy/CPAProxy.podspec'
-  pod 'XMPPFramework/Swift', :path => 'Submodules/XMPPFramework/XMPPFramework.podspec'
+target 'msgNotificationService' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  use_frameworks!
 
-  pod 'ChatSecure-Push-iOS', :path => 'Submodules/ChatSecure-Push-iOS/ChatSecure-Push-iOS.podspec'
+  # Pods for messagesNotification
+  all_pods
 
-  # Storage
-  # We are blocked on SQLCipher 4.0.0 migration https://github.com/ChatSecure/ChatSecure-iOS/issues/1078
-  pod 'SQLCipher', '~> 4.2'
-  # Version 3.1.2 breaks YapTaskQueue 0.3.0
-  pod 'YapDatabase/SQLCipher', '~> 3.1.3'
-  #pod 'YapDatabase/SQLCipher'#, :path => 'Submodules/YapDatabase/YapDatabase.podspec'
-  pod 'Mantle', :podspec => 'Podspecs/Mantle.podspec.json'
+end
 
-  # The upstream 1.3.2 has a regression https://github.com/ChatSecure/ChatSecure-iOS/issues/1075
-  pod 'libsqlfs/SQLCipher', :git => 'https://github.com/ChatSecure/libsqlfs.git', :branch => '1.3.2-chatsecure'
-  #pod 'libsqlfs/SQLCipher', :path => 'Submodules/libsqlfs/libsqlfs.podspec'
+target 'msgNotificationContent' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  use_frameworks!
 
-  pod 'IOCipher/GCDWebServer', :path => 'Submodules/IOCipher/IOCipher.podspec'
-  pod 'YapTaskQueue/SQLCipher', :git => 'https://github.com/ChatSecure/YapTaskQueue.git', :branch => 'swift4'
-  #pod 'YapTaskQueue/SQLCipher'#, :path => 'Submodules/YapTaskQueue/YapTaskQueue.podspec'
+  # Pods for messagesNotification
+  all_pods
 
-  # Crypto
-  pod 'SignalProtocolObjC', :path => 'Submodules/SignalProtocol-ObjC/SignalProtocolObjC.podspec'
-  pod 'OTRKit', :path => 'Submodules/OTRKit/OTRKit.podspec'
+end
 
-  pod 'Alamofire', '~> 4.4'
-  pod 'Kvitto', '~> 1.0'
+post_install do |installer|
+	# Get the version of linphone-sdk
+	installer.pod_targets.each do |target|
+		if target.pod_name == 'linphone-sdk'
+			target.specs.each do |spec|
+				$linphone_sdk_version = spec.version
+			end
+		end
+	end
+			
+	app_project = Xcodeproj::Project.open(Dir.glob("*.xcodeproj")[0])
+	app_project.native_targets.each do |target|
+		target.build_configurations.each do |config|
+			if target.name == "linphone" || target.name == 'msgNotificationService' || target.name == 'msgNotificationContent' || target.name == 'TribuPhone' || target.name == 'tribu msgNotificationContent' || target.name == 'tribu msgNotificationService'
+				if ENV['USE_CRASHLYTICS'].nil?
+					if config.name == "Debug" then
+						config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = '$(inherited) DEBUG=1'
+						else
+						config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = '$(inherited)'
+					end
+					config.build_settings['OTHER_SWIFT_FLAGS'] = '$(inherited)'
+				else
+					# activate crashlytics
+					if config.name == "Debug" then
+						config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = '$(inherited) DEBUG=1 USE_CRASHLYTICS=1'
+					else
+						config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = '$(inherited) USE_CRASHLYTICS=1'
+					end
+					config.build_settings['OTHER_SWIFT_FLAGS'] = '$(inherited) -DUSE_CRASHLYTICS'
+				end
+			end
 
-  pod 'ChatSecureCore', :path => 'ChatSecureCore.podspec'
-  pod 'OTRAssets', :path => 'OTRAssets.podspec'
+			if target.name == "linphone" || target.name == "TribuPhone"
+				config.build_settings['OTHER_CFLAGS'] = '-DBCTBX_LOG_DOMAIN=\"ios\"',
+																							'-DCHECK_VERSION_UPDATE=FALSE',
+																							'-DENABLE_QRCODE=TRUE',
+																							'-DENABLE_SMS_INVITE=TRUE',
+																							'$(inherited)',
+																							"-DLINPHONE_SDK_VERSION=\\\"#{$linphone_sdk_version}\\\""
+			end
 
-  target 'ChatSecureTests'
-  target 'ChatSecure'
+			app_project.save
+		end
+	end
 end
